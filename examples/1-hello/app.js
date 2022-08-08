@@ -1,13 +1,9 @@
 //const { default: axios } = require('axios')
 
-/** Serveless functions version 3 - 1-hello > app js file
+/** Serveless functions version 4 - 1-hello > app js file
  * - Features: 
  * 
- *          --> Fethcing the '1-hello' data from the 
- *              api.
- * 
- *          --> Rendering the '1-hello' api data on the
- *              front-end.
+ *          --> Handle and render the error response
  * 
  * Note: this version is about how to get back-end ( serveless
  * functions built with the front-end -> app js and index html
@@ -32,7 +28,15 @@ const fetchData = async () => {
          * it will render*/
         result.textContent = data;
     } catch (error) {
+
+        /**this is the error object */
         console.log(error.response)
+        /**this is how i got the error message */
+        console.log('the error message pulled ==>', error.response.data)
+        /**this is how i pull/destructure the error message */
+        const { data } = error.response
+        /**this way i render the error message */
+        result.textContent = data
     }
 }
 
