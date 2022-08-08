@@ -1,20 +1,17 @@
 /**to test it */
 // domain /.netlify/functions/1-hello
 
-/** Serveless functions version 5 - 1-hello js function
+/** Serveless functions version 6 - 1-hello js function
  * - Features: 
  * 
- *          --> Testing 'Bad request' statusCode 400 
+ *          --> Testing 'sucess' statusCode 200 
  * 
- * Note: the status code can generate a different object
- * or a different 'statusText' prop as i was testing
- * in this and previous versions, axios library has this 
- * object to help us to build the back-end:
- * 
- *                 statusCode: 200 --> success request
- * 
- *  other can be: statusCode: 404 --> error status code
- *                            400 --> Bad request                  
+ * Note: By this version i'm going back to testing 'sucess' 
+ * statusCode 200 in order to redirects to from the domain
+ * '/.netlify/functions/1-hello' to the domain '/api/1-hello'
+ * in order to use the second one to access to the api 
+ * resources ( functions, data, and more ) from the 
+ * front-end                    
  * 
  *  full reference:
  * 
@@ -29,8 +26,8 @@ exports.handler = async(event, context, cb) => {
        return{
         /**when i change the 'statusCode' it changes
          * the 'statusText' prop message*/
-        statusCode: 400,
-        body:'Resource not found',
+        statusCode: 200,
+        body:'Our first Netlify function example',
     }
     
 }
