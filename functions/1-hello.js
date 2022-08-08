@@ -1,12 +1,10 @@
 /**to test it */
 // domain /.netlify/functions/1-hello
 
-/** Serveless functions version 3 - 1-hello js function
+/** Serveless functions version 4 - 1-hello js function
  * - Features: 
  * 
- *          --> Testing 'Our first Netlify function example'
- *              and fetching it from '1-hello' > app js to
- *              render the message of first example. 
+ *          --> Testing 'error' statusCode 404 
  * 
  * Note: the 'body' prop always need to be a string that's
  * why the implementation of 'JSON.stringify' is necessary,
@@ -33,8 +31,8 @@ exports.handler = async(event, context, cb) => {
         /**here i returned but i have to apply
          * 'JSON.stringify' in order to visualize 
          * as an API in the browser*/
-        statusCode: 200,
-        body:'Our first Netlify function example',
+        statusCode: 404,
+        body:'Resource not found',
     }
     
 }
