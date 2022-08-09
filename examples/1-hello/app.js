@@ -1,13 +1,35 @@
 //const { default: axios } = require('axios')
 
-/** Serveless functions version 4 - 1-hello > app js file
+/** Serveless functions version 6 - 1-hello > app js file
  * - Features: 
  * 
- *          --> Handle and render the error response
+ *          --> Testing 200 statusCode by redirecting
+ *              the domain on 'toml' file
  * 
- * Note: this version is about how to get back-end ( serveless
- * functions built with the front-end -> app js and index html
- * file )
+ *          --> Converting from '200' and '301' requests
+ *              by setting it to '200' on 'toml' file.
+ * 
+ * Note: for this version im going to build a friendly 
+ * shortcut for the domain
+ *  
+ *   from this ==> domain /.netlify/functions/1-hello
+ *   to this   ==> domain /api/1-hello
+ * 
+ * all these changes are made on the netlify.toml  
+ * this is called 'redirects' ( this is a netlify feature)
+ * checking the star '*' and ':splat' they will match
+ * 
+ * adding to the 'toml' this las two lines:
+ *  
+ *   [[redirects]]
+ *      
+ *      from = '/api/*'
+ *      to = '/.netlify/functions/:splat'
+ * 
+ * and checking the 'chrome > network' tab will generate
+ * two request '200' and '301' so i add a last line
+ *   
+ *     status = 200
  */
 
 /**here i select where i'll render the content
