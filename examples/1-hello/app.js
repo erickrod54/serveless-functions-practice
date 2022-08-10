@@ -20,7 +20,7 @@ const fetchData = async () => {
 
         /**then i pull the 'data' prop - log it*/
         const { data } = await axios.get('/api/1-hello')
-        console.log('this is the data i got  ==>', data)
+        //console.log('this is the data i got  ==>', data)
 
         /**then i i just add to my 'textContent' and 
          * it will render*/

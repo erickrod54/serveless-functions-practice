@@ -23,10 +23,10 @@ const fetchData = async () => {
     try {
         /**here i fetch the object for the response */
         const response = await axios.get('/api/2-basic-api')
-        console.log('this is the object ==>', response)
+        //console.log('this is the object ==>', response)
         /**here i pulled the data from the response */
         const { data } = response
-        console.log('this is the api data i pulled ==>', data)
+        //console.log('this is the api data i pulled ==>', data)
         
         /**here in 'products' variable i map and
          * build the object to render every product
