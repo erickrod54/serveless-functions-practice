@@ -18,8 +18,8 @@ const items = require('../assets/data')
 exports.handler = async(event, context, cb) => {
 
     return{
-     headers:{
-        'Acess-Control-Allow-Origin' : '*',
+     headers: {
+        'Access-Control-Allow-Origin':'*',
      },
      statusCode: 200,
      body: JSON.stringify(items),
