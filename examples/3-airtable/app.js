@@ -1,17 +1,9 @@
 const result = document.querySelector('.result')
 
-/** Serveless functions version 8 - 3-airtable >
+/** Serveless functions version 9 - 3-airtable >
  * app js - Features: 
  * 
- *          --> Fetching the 'axiosObject'.
- * 
- *          --> Pulling the 'data' from the 
- *              'axiosObject'.
- * 
- *          --> Mapping 'data' on 'products'.
- * 
- *          --> Rendering the 'products' on the
- *              'result'.    
+ *          --> Fixing the two value pair.    
  * 
  * Note: By this version i'll work building the 
  * front-end of the application.
@@ -30,7 +22,18 @@ const fetchProducts = async () => {
 
       const products = data.map((product) => {
         const { id, url, name, price } = product;
-        return `<a href="product.html?${id}" class="product"> 
+        /**the parameters is highly important, they must be
+         * build by a key value pair 
+         * 
+         *     --> href="product.html?id=${id}"
+         *  
+         *    for this case '?id=' parameter --> first key
+         *                                      value pair
+         *  
+         *      and then the value '${id}' --> second key
+         *                                     value pair
+         */
+        return `<a href="product.html?id=${id}" class="product"> 
             <img src="${url}" alt="${name}"/>
             <div class="info">
                 <h5>${name}</h5>
