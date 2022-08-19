@@ -1,48 +1,39 @@
 const result = document.querySelector('.result');
-/** Serveless functions version 9 - 3-airtable >
+
+/** Serveless functions version 10 - 3-airtable >
  * product js - Features: 
  * 
- *          --> Getting the single 'product' 
- *              by using the 'id'.
+ *          --> Setting up the url '/api/3-z-all-in-one'
+ *              -where i can get the single or the 
+ *              product list-
  * 
- *          --> Pulling the 'data' from 
- *              'axiosObject'.
+ * Note: This url has been set up on 'airtable' and here 
+ * in 'product' js
  * 
- *          --> Rendering the error
- *             -error.response.data-  
- * 
- *          --> Rendering the 'data' product
- *              after accesing the 'fields'
- *              props.
- * 
- * Note: By this version i'll work building the 
- * front-end of the application in specific for
- * the 'product'
- * 
- * the html that has been use to interpolate 
- * template string has been taken from product
- * html
+ * By this version the application is getting both 'product
+ * list' and 'product' with the url '/api/3-z-all-in-one'
  */
 const fetchProduct = async () => {
 
     result.innerHTML = `<h2>Loading...</h2>`
     try {
-        /**window.location will get me the 'key value pair'  
-         * a parameter and value -reference to app.js-*/
+        
         const id = window.location.search
         console.log(id)
-        /**here i get the 'axiosObject' */
-        const axiosObject = await axios.get(`/api/3-product${id}`)
+
+        /**here i set the new url */
+        const axiosObject = await axios.get(`/api/3-z-all-in-one${id}`)
         console.log('this is the axiosObject that i got ==>', axiosObject)
 
-        /**here i pull the data */
-        const { data } = await axios.get(`/api/3-product${id}`)
+       /**here i set the new url */
+        const { data } = await axios.get(`/api/3-z-all-in-one${id}`)
         console.log('this is the data by the id ==>', data )
         /**from the product i will access to 'fields' there
          * is where the data lives */
 
-        /** here i access to the 'fields'*/
-        const { data: {fields}} = await axios.get(`/api/3-product${id}`)
+        /** here i access to the 'fields' and i set
+         * the new url*/
+        const { data: {fields}} = await axios.get(`/api/3-z-all-in-one${id}`)
         
         /**here i pull the the specific data from 'fields' */
         const {name, desc, price, image } = fields
