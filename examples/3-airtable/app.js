@@ -1,22 +1,26 @@
 const result = document.querySelector('.result')
 
-/** Serveless functions version 9 - 3-airtable >
+/** Serveless functions version 10 - 3-airtable >
  * app js - Features: 
  * 
- *          --> Fixing the two value pair.    
+ *          --> Setting up the new 'url' to get both
+ *              data -all products, and single product-
  * 
- * Note: By this version i'll work building the 
- * front-end of the application.
+ * Note: This new function is created to handle both
+ * requests in one url.
+ *    
+ *    current ---> '/api/3-z-all-in-one'
+ *    previous --> '/api/3-airtable'
  * 
- * by next version i'll work in the single-product
- * 
+ * By this version the application is getting both 'product
+ * list' and 'product' with the url '/api/3-z-all-in-one'
  */
 
 const fetchProducts = async () => {
     try {
-      const axiosObject = await axios.get('/api/3-airtable')
+      const axiosObject = await axios.get('/api/3-z-all-in-one')
         console.log('fetching the axios on the front-end ==>', axiosObject)
-      const { data } = await axios.get('/api/3-airtable')
+      const { data } = await axios.get('/api/3-z-all-in-one')
       console.log('pulling the data on the front-end ==>', data)
 
 
